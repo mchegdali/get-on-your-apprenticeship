@@ -1,0 +1,24 @@
+.table_students {
+  width: 100%;
+}
+
+.table_students > caption,
+.table_students tr > td {
+  text-align: center;
+}
+
+.table_students tbody tr {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(235, 235, 245);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+/* At least Tablet */
+@media (min-width: 640px) {
+}
+
+/* At least Desktop */
+@media (min-width: 1024px) {
+}

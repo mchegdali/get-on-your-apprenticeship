@@ -1,0 +1,112 @@
+.header {
+  padding: 8px;
+  height: 64px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(235, 235, 245);
+}
+
+.navbar {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-logo {
+  height: 48px;
+  pointer-events: none;
+}
+
+.navbar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.btn-menu {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 48px;
+}
+
+.menu-icon {
+  fill: black;
+  object-position: center;
+}
+
+.navbar-nav {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: white; /*#282832*/
+  top: 64px;
+  left: 0;
+  list-style-type: none;
+}
+
+.navbar-nav.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:visited {
+  color: inherit;
+}
+
+.nav-link.active {
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    border-bottom-color: rgb(50, 50, 60);
+  }
+
+  .menu-icon {
+    fill: white;
+  }
+}
+
+@media (min-width: 640px) {
+  .navbar {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn-menu {
+    display: none;
+  }
+
+  .navbar-nav {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    gap: 2rem;
+    top: unset;
+    left: unset;
+  }
+}

@@ -1,0 +1,27 @@
+.fallback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+}
+
+.main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+/* At least Tablet */
+@media (min-width: 640px) {
+  .main {
+    width: 80%;
+  }
+}
+
+/* At least Desktop */
+@media (min-width: 1024px) {
+}
+
+

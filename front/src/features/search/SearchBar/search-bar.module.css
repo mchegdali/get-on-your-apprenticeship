@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_group {
+  margin: 8px 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(235, 235, 245);
+  border-radius: 5px;
+
+  height: 36px;
+  display: flex;
+}
+
+.input_group > :is(.input, .select, .btn) {
+  border: none;
+  height: 100%;
+}
+
+.input_group > .input {
+  flex-grow: 1;
+  padding-left: 5px;
+}
+
+.select {
+  font-weight: 600;
+  padding: 5px 15px;
+}
+
+.select {
+  font-weight: 600;
+}
+
+.select > option {
+  font-weight: 400;
+}

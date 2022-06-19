@@ -1,37 +1,24 @@
-import React, { Component } from 'react';
-import logo from './hogwarts.png';
-import './App.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { apiResponse: "" };
-  }
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { RecoilRoot } from "recoil";
 
-  callAPI() {
-    fetch("http://localhost:3000/dummy/student")
-      .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }))
-      .catch(err => err);
-  }
+import Layout from "./features/Layout";
+import HomePage from "./pages/Home";
+import StatsPage from "./features/Stats";
 
-  componentWillMount() {
-    this.callAPI();
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Here is a list of all students:
-        </p>
-        <p className="App-intro">{this.state.apiResponse}</p>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <RecoilRoot>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="stats" element={<StatsPage />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </RecoilRoot>
+  );
+};
 
 export default App;
