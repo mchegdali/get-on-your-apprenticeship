@@ -59,7 +59,7 @@ studentsRouter.get("/", async (req, res) => {
       }
     }
 
-    return res.status(200).json(result);
+    return res.status(result.length > 0 ? 200 : 400).json(result);
   } catch (error) {
     return res.status(400).json(error);
   }
