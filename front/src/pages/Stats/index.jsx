@@ -1,8 +1,8 @@
 import styles from "./stats.module.css";
 
 import { Suspense } from "react";
-import { HouseStatsChart } from "./HouseStatsChart";
-import { AliveStudentStatsChart } from "./AliveStudentStatsChart";
+import { HouseStatsChart } from "../../features/Stats/HouseStatsChart";
+import { AliveStudentStatsChart } from "../../features/Stats/AliveStudentStatsChart";
 
 const StatsPage = () => {
   return (

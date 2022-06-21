@@ -15,23 +15,29 @@
   gap: 0.5rem;
 }
 
-.navbar-brand {
+.navbar_brand {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  text-decoration: none;
 }
 
-.navbar-logo {
+.navbar_brand:visited {
+  color: inherit;
+}
+
+.navbar_logo {
   height: 48px;
   pointer-events: none;
 }
 
-.navbar-title {
+.navbar_title {
   font-size: 1.25rem;
   font-weight: 600;
 }
 
-.btn-menu {
+.btn_menu {
   background-color: transparent;
   border: none;
   display: flex;
@@ -41,12 +47,12 @@
   width: 48px;
 }
 
-.menu-icon {
+.menu_icon {
   fill: black;
   object-position: center;
 }
 
-.navbar-nav {
+.navbar_nav {
   display: none;
   position: fixed;
   width: 100vw;
@@ -57,7 +63,7 @@
   list-style-type: none;
 }
 
-.navbar-nav.show {
+.navbar_nav.show {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,16 +71,16 @@
   gap: 3rem;
 }
 
-.nav-link {
+.nav_link {
   text-decoration: none;
   font-weight: 500;
 }
 
-.nav-link:visited {
+.nav_link:visited {
   color: inherit;
 }
 
-.nav-link.active {
+.nav_link.active {
   font-weight: 600;
 }
 
@@ -83,8 +89,12 @@
     border-bottom-color: rgb(50, 50, 60);
   }
 
-  .menu-icon {
+  .menu_icon {
     fill: white;
+  }
+
+  .navbar_nav.show {
+    background-color: rgb(40, 40, 50);
   }
 }
 
@@ -95,11 +105,11 @@
 }
 
 @media (min-width: 1024px) {
-  .btn-menu {
+  .btn_menu {
     display: none;
   }
 
-  .navbar-nav {
+  .navbar_nav {
     display: flex;
     position: relative;
     width: fit-content;

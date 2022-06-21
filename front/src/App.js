@@ -1,10 +1,9 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 
 import Layout from "./features/Layout";
 import HomePage from "./pages/Home";
-import StatsPage from "./features/Stats";
+import StatsPage from "./pages/Stats";
 
 const App = () => {
   return (

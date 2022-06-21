@@ -25,7 +25,7 @@ code {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #282832;
+    background-color: rgb(40, 40, 50);
     color: white;
   }
 }

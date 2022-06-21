@@ -8,6 +8,7 @@ import styles from "./home.module.css";
 const HomePage = () => {
   return (
     <>
+      <h1>School of Magical Data</h1>
       <SearchBar />
       <Suspense
         fallback={

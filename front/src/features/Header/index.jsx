@@ -5,7 +5,7 @@ import { ReactComponent as CloseMenuIcon } from "../../assets/icons/ic_close_36p
 import classnames from "classnames";
 
 import styles from "./header.module.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOn, setIsMenuOn] = useState(false);
@@ -40,35 +40,33 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
-        <div className={styles["navbar-brand"]}>
-          <img src={logo} className={styles["navbar-logo"]} alt="logo" />
-          <span className={styles["navbar-title"]}>
-            The school of magical data
-          </span>
-        </div>
+        <Link to="/" onClick={handleClickNavLink} className={styles.navbar_brand}>
+          <img src={logo} className={styles.navbar_logo} alt="logo" />
+          <span className={styles.navbar_title}>School of Magical Data</span>
+        </Link>
         <div>
           <button
             type="button"
-            className={styles["btn-menu"]}
+            className={styles.btn_menu}
             onClick={handleClickMenuButton}
           >
             {isMenuOn ? (
-              <CloseMenuIcon className={styles["menu-icon"]} />
+              <CloseMenuIcon className={styles.menu_icon} />
             ) : (
-              <MenuIcon className={styles["menu-icon"]} />
+              <MenuIcon className={styles.menu_icon} />
             )}
           </button>
           <ul
-            className={classnames(styles["navbar-nav"], {
-              [`${styles["show"]}`]: isMenuOn,
+            className={classnames(styles.navbar_nav, {
+              [`${styles.show}`]: isMenuOn,
             })}
           >
-            <li className={styles["nav-item"]}>
+            <li className={styles.nav_item}>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  classnames(styles["nav-link"], {
-                    [`${styles["active"]}`]: isActive,
+                  classnames(styles.nav_link, {
+                    [`${styles.active}`]: isActive,
                   })
                 }
                 onClick={handleClickNavLink}
@@ -76,12 +74,12 @@ const Header = () => {
                 Home
               </NavLink>
             </li>
-            <li className={styles["nav-item"]}>
+            <li className={styles.nav_item}>
               <NavLink
                 to="stats"
                 className={({ isActive }) =>
-                  classnames(styles["nav-link"], {
-                    [`${styles["active"]}`]: isActive,
+                  classnames(styles.nav_link, {
+                    [`${styles.active}`]: isActive,
                   })
                 }
                 onClick={handleClickNavLink}

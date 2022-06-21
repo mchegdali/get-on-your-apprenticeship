@@ -1,7 +1,7 @@
 import { atom, constSelector, selector, selectorFamily } from "recoil";
 import qs from "qs";
 
-const baseUrl = constSelector("http://localhost:3000/real/students");
+const baseUrl = constSelector("http://localhost:5000/api/students");
 
 export const searchFilterState = atom({
   key: "search/filter",
