@@ -22,20 +22,13 @@ export const HouseStatsChart = () => {
           label: "# of students",
           data: housesStudentsCount,
           backgroundColor: [
-            "rgba(103, 0, 1, 0.2)", // gryffindor
-            "rgba(0, 51, 0, 0.2)", // slytherin
-            "rgba(0, 46, 95, 0.2)", // ravenclaw
-            "rgba(204, 153, 0, 0.2)", // hufflepuff
-            "rgba(33, 33, 33, 0.2)", // none
+            "rgba(103, 0, 1, 0.8)", // gryffindor
+            "rgba(0, 51, 0, 0.8)", // slytherin
+            "rgba(0, 46, 95, 0.8)", // ravenclaw
+            "rgba(204, 153, 0, 0.8)", // hufflepuff
+            "rgba(66, 66, 66, 0.8)", // none
           ],
-          borderColor: [
-            "rgba(103, 0, 1, 1)", // gryffindor
-            "rgba(0, 51, 0, 1)", // slytherin
-            "rgba(0, 46, 95, 1)", // ravenclaw
-            "rgba(204, 153, 0, 1)", // hufflepuff
-            "rgba(33, 33, 33, 1)", // none
-          ],
-          borderWidth: 1,
+          borderWidth: 0,
         },
       ],
     }),

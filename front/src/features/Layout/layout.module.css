@@ -13,6 +13,10 @@
   padding: 0.5rem;
 }
 
+.main.menu_open {
+  display: none;
+}
+
 /* At least Tablet */
 @media (min-width: 640px) {
   .main {

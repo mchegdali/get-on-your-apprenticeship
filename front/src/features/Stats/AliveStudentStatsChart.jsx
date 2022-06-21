@@ -16,14 +16,10 @@ export const AliveStudentStatsChart = () => {
           label: "# of students",
           data: housesStudentsCount,
           backgroundColor: [
-            "rgba(70, 184, 0, 0.2)", // alive
-            "rgba(193, 15, 23, 0.2)", // dead
+            "rgba(70, 184, 0, 0.8)", // alive
+            "rgba(193, 15, 23, 0.8)", // dead
           ],
-          borderColor: [
-            "rgba(70, 184, 0, 1)", // alive
-            "rgba(193, 15, 23, 1)", // dead
-          ],
-          borderWidth: 1,
+          borderWidth: 0,
         },
       ],
     }),

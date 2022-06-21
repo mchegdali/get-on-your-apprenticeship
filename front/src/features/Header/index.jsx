@@ -1,36 +1,20 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import classNames from "classnames";
+
 import logo from "../../assets/images/hogwarts.png";
 import { ReactComponent as MenuIcon } from "../../assets/icons/ic_menu_36px.svg";
 import { ReactComponent as CloseMenuIcon } from "../../assets/icons/ic_close_36px.svg";
-import classnames from "classnames";
 
 import styles from "./header.module.css";
-import { Link, NavLink } from "react-router-dom";
+
+import { isMenuOpenState } from "./header.store";
 
 const Header = () => {
-  const [isMenuOn, setIsMenuOn] = useState(false);
-  const [scrollX, setScrollX] = useState(0);
-  const [scrollY, setScrollY] = useState(0);
-
-  const scrollCallback = useCallback(
-    () => window.scrollTo(scrollX, scrollY),
-    [scrollX, scrollY]
-  );
-
-  useEffect(() => {
-    // disable scroll when menu is open
-    if (isMenuOn) {
-      setScrollX(window.scrollX);
-      setScrollY(window.scrollY);
-      window.addEventListener("scroll", scrollCallback);
-    } else {
-      window.removeEventListener("scroll", scrollCallback);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isMenuOn]);
+  const [isMenuOpen, setIsMenuOn] = useRecoilState(isMenuOpenState);
 
   const handleClickMenuButton = (e) => {
-    setIsMenuOn(!isMenuOn);
+    setIsMenuOn(!isMenuOpen);
   };
 
   const handleClickNavLink = (e) => {
@@ -40,7 +24,11 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
-        <Link to="/" onClick={handleClickNavLink} className={styles.navbar_brand}>
+        <Link
+          to="/"
+          onClick={handleClickNavLink}
+          className={styles.navbar_brand}
+        >
           <img src={logo} className={styles.navbar_logo} alt="logo" />
           <span className={styles.navbar_title}>School of Magical Data</span>
         </Link>
@@ -50,23 +38,23 @@ const Header = () => {
             className={styles.btn_menu}
             onClick={handleClickMenuButton}
           >
-            {isMenuOn ? (
+            {isMenuOpen ? (
               <CloseMenuIcon className={styles.menu_icon} />
             ) : (
               <MenuIcon className={styles.menu_icon} />
             )}
           </button>
           <ul
-            className={classnames(styles.navbar_nav, {
-              [`${styles.show}`]: isMenuOn,
+            className={classNames(styles.navbar_nav, {
+              [styles.show]: isMenuOpen,
             })}
           >
             <li className={styles.nav_item}>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  classnames(styles.nav_link, {
-                    [`${styles.active}`]: isActive,
+                  classNames(styles.nav_link, {
+                    [styles.active]: isActive,
                   })
                 }
                 onClick={handleClickNavLink}
@@ -78,8 +66,8 @@ const Header = () => {
               <NavLink
                 to="stats"
                 className={({ isActive }) =>
-                  classnames(styles.nav_link, {
-                    [`${styles.active}`]: isActive,
+                  classNames(styles.nav_link, {
+                    [styles.active]: isActive,
                   })
                 }
                 onClick={handleClickNavLink}

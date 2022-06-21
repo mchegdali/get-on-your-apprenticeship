@@ -1,18 +1,20 @@
-.table_students {
-  width: 100%;
+.result_count {
+  font-size: 0.8rem;
 }
 
-.table_students > caption,
-.table_students tr > td {
-  text-align: center;
+.cell {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
 }
 
-.table_students tbody tr {
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(235, 235, 245);
-  border-radius: 5px;
-  padding: 0.5rem;
+.heading {
+  font-weight: 600;
+}
+
+.container_result {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
 }
 
 /* At least Tablet */

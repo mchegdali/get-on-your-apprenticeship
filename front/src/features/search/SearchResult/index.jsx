@@ -1,32 +1,34 @@
 import { useRecoilValue } from "recoil";
+import classNames from "classnames";
+
 import { searchQuery } from "../search.store";
 import styles from "./search-result.module.css";
 
 const SearchResult = () => {
   const searchResult = useRecoilValue(searchQuery);
   return (
-    <table className={styles.table_students}>
-      <caption>
+    <section>
+      <p className={styles.result_count}>
         {searchResult.length > 0 && `Found ${searchResult.length} characters`}
-      </caption>
-      <thead>
-        <tr>
-          {["Name", "House", "Surname", "Date of birth"].map((thContent) => (
-            <th>{thContent}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {searchResult.map((student) => (
-          <tr>
-            <td>{student.name}</td>
-            <td>{student.house}</td>
-            <td>{student.surname || "No surname"}</td>
-            <td>{student.dateOfBirth}</td>
-          </tr>
+      </p>
+      <div className={styles.container_result}>
+        {["Name", "House", "Surname", "Date of birth"].map((heading) => (
+          <span className={classNames(styles.cell, styles.heading)}>
+            {heading}
+          </span>
         ))}
-      </tbody>
-    </table>
+        {searchResult.map((student) => (
+          <>
+            <span className={styles.cell}>{student.name}</span>
+            <span className={styles.cell}>{student.house}</span>
+            <span className={styles.cell}>
+              {student.surname || "No surname"}
+            </span>
+            <span className={styles.cell}>{student.dateOfBirth}</span>
+          </>
+        ))}
+      </div>
+    </section>
   );
 };
 
