@@ -1,4 +1,8 @@
 .header {
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  background-color: white;
   padding: 8px;
   height: 64px;
   border-bottom-width: 1px;
@@ -87,6 +91,7 @@
 
 @media (prefers-color-scheme: dark) {
   .header {
+    background-color: #282832;
     border-bottom-color: rgb(50, 50, 60);
   }
 
