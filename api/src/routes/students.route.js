@@ -6,7 +6,7 @@ const intersection = require("lodash.intersection");
 
 const studentsRouter = express.Router();
 
-const API_URL = "http://hp-api.herokuapp.com/api/characters";
+const API_URL = "https://hp-api.onrender.com/api/characters";
 
 const characters = [];
 
